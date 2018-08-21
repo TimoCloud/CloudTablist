@@ -1,5 +1,0 @@
-name: CloudTablist
-version: 1.0.1
-main: cloud.timo.cloudtablist.CloudTablist
-author: Lasergott
-depends: [TimoCloud]
