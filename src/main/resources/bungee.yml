@@ -1,0 +1,5 @@
+name: CloudTablist
+version: ${project.version}
+main: cloud.timo.cloudtablist.CloudTablist
+author: Lasergott
+depends: [TimoCloud]
