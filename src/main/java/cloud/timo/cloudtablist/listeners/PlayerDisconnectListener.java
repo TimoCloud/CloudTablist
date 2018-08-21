@@ -17,7 +17,7 @@ public class PlayerDisconnectListener implements Listener {
         CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
             proxyObject.getOnlinePlayers().forEach(playerObject -> {
-                if (!playerObject.getUuid().equals(event.getPlayer()))
+                if (!playerObject.getUuid().equals(event.getPlayer().getUuid()))
                     CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
             });
         }));
