@@ -1,10 +1,10 @@
 package cloud.timo.cloudtablist.listeners;
 
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
+import cloud.timo.TimoCloud.api.events.EventHandler;
 import cloud.timo.TimoCloud.api.events.Listener;
 import cloud.timo.TimoCloud.api.events.PlayerDisconnectEvent;
 import cloud.timo.cloudtablist.CloudTablist;
-import net.md_5.bungee.event.EventHandler;
 
 /**
  * @author Sebastian
