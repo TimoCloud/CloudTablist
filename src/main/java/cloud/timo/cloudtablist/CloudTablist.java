@@ -3,6 +3,7 @@ package cloud.timo.cloudtablist;
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import cloud.timo.cloudtablist.commands.TablistReloadCommand;
 import cloud.timo.cloudtablist.listeners.PlayerDisconnectListener;
+import cloud.timo.cloudtablist.listeners.PlayerServerChangeServerListener;
 import cloud.timo.cloudtablist.listeners.ServerConnectListener;
 import cloud.timo.cloudtablist.managers.FileManager;
 import cloud.timo.cloudtablist.utils.Helper;
@@ -34,6 +35,7 @@ public class CloudTablist extends Plugin {
     private void registerListeners() {
         TimoCloudAPI.getEventAPI().registerListener(new PlayerDisconnectListener());
         TimoCloudAPI.getEventAPI().registerListener(new ServerConnectListener());
+        TimoCloudAPI.getEventAPI().registerListener(new PlayerServerChangeServerListener());
     }
 
     private void makeInstances() {

@@ -3,17 +3,19 @@ package cloud.timo.cloudtablist.listeners;
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import cloud.timo.TimoCloud.api.events.EventHandler;
 import cloud.timo.TimoCloud.api.events.Listener;
-import cloud.timo.TimoCloud.api.events.PlayerConnectEvent;
+import cloud.timo.TimoCloud.api.events.PlayerServerChangeEvent;
 import cloud.timo.cloudtablist.CloudTablist;
 
 /**
  * @author Sebastian
- * Created in 21.08.2018
+ * Created in 23.08.2018
+ * Copyright (c) 2015 - 2018 by CraftMal.de to present. All rights reserved.
  */
-public class ServerConnectListener implements Listener {
+public class PlayerServerChangeServerListener implements Listener {
+
 
     @EventHandler
-    public void onPlayerDisconnect(PlayerConnectEvent event) {
+    public void onPlayerServerChange(PlayerServerChangeEvent event){
         CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
             proxyObject.getOnlinePlayers().forEach(playerObject -> {
