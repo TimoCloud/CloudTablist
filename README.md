@@ -6,11 +6,8 @@ In addition, we have a large number of variables that can be used in the header 
  ## Download
  You can download the latest version [here](https://jenkins.craftmal.de/job/CloudTablist/lastSuccessfulBuild/artifact/target/CloudTablist.jar)
 
- ## Commands & Permissions
- See the [Wiki](https://github.com/TimoCloud/CloudTablist/wiki/Commands-&-Permissions)
-
- ## Variables
- See the [Wiki](https://github.com/TimoCloud/CloudTablist/wiki/Variables)
+ ## Wiki
+ See the [Wiki](https://github.com/TimoCloud/CloudTablist/wiki/)
 
  ## Building from source
  ```
