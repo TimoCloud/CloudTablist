@@ -22,4 +22,4 @@ In addition, we have a large number of variables that can be used in the header 
  ## Hosting
 My personal recommendation is Hetzner (https://www.hetzner.de)
 
- [![Fee-Hosting](https://www.hetzner.de/themes/hetzner/images/logo/logo-hetzner-online.svg)
+![Hetzner](https://www.hetzner.de/themes/hetzner/images/logo/logo-hetzner-online.svg)
