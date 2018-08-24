@@ -20,6 +20,3 @@ In addition, we have a large number of variables that can be used in the header 
  You can contact us via [support@timo.cloud](mailto:support@timo.cloud) or join our [Discord](https://discord.gg/RTNn4SE)
 
  ## Hosting
-My personal recommendation is Hetzner (https://www.hetzner.de)
-
-![Hetzner](https://www.hetzner.de/themes/hetzner/images/logo/logo-hetzner-online.svg)
