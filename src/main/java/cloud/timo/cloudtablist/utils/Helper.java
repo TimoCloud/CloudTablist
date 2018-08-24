@@ -31,11 +31,11 @@ public class Helper {
         ProxyObject proxyObject = playerObject.getProxy();
         int[] playerCountGlobal = {0};
         int[] maxPlayerCountGlobal = {0};
-        TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> playerCountGlobal[0] += proxyGroupObject.getOnlinePlayerCount());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> maxPlayerCountGlobal[0] += proxyGroupObject.getMaxPlayerCount());
+        TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> playerCountGlobal[0] += proxyGroupObject.getOnlinePlayerCount());
         return ChatColor.translateAlternateColorCodes('&', message
-                .replace("{onlinePlayersCountServer}", String.valueOf(serverObject.getOnlinePlayerCount()+1))
-                .replace("{onlinePlayersCountProxy}", String.valueOf(proxyObject.getOnlinePlayerCount()+1))
+                .replace("{onlinePlayersCountServer}", String.valueOf(serverObject.getOnlinePlayerCount()))
+                .replace("{onlinePlayersCountProxy}", String.valueOf(proxyObject.getOnlinePlayerCount()))
                 .replace("{onlinePlayersCountGlobal}", String.valueOf(playerCountGlobal[0]+1))
                 .replace("{serverGroup}", playerObject.getServer().getGroup().getName())
                 .replace("{proxyGroup}", playerObject.getProxy().getGroup().getName())
