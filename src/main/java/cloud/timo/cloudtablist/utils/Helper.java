@@ -36,7 +36,7 @@ public class Helper {
         return ChatColor.translateAlternateColorCodes('&', message
                 .replace("{onlinePlayersCountServer}", String.valueOf(serverObject.getOnlinePlayerCount()))
                 .replace("{onlinePlayersCountProxy}", String.valueOf(proxyObject.getOnlinePlayerCount()))
-                .replace("{onlinePlayersCountGlobal}", String.valueOf(playerCountGlobal[0]+1))
+                .replace("{onlinePlayersCountGlobal}", String.valueOf(playerCountGlobal[0]))
                 .replace("{serverGroup}", playerObject.getServer().getGroup().getName())
                 .replace("{proxyGroup}", playerObject.getProxy().getGroup().getName())
                 .replace("{proxyName}", playerObject.getProxy().getName())
