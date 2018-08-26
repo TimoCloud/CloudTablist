@@ -53,7 +53,7 @@ public class Helper {
                 .replace("{serverMap}", serverObject.getMap())
                 .replace("{serverExtra}", serverObject.getExtra())
                 .replace("{maxPlayerCountServer}", String.valueOf(serverObject.getMaxPlayerCount()))
-                .replace("{maxPlayerCountProxy}", String.valueOf(serverObject.getMaxPlayerCount()))
+                .replace("{maxPlayerCountProxy}", String.valueOf(proxyObject.getGroup().getMaxPlayerCountPerProxy()))
                 .replace("{maxPlayerCountGlobal}", String.valueOf(maxPlayerCountGlobal[0])));
     }
 
