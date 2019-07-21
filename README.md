@@ -4,7 +4,7 @@ The CloudTablist BungeeCord also has a config.yml. You can configure everything 
 In addition, we have a large number of variables that can be used in the header and footer.
 
  ## Download
- You can download the latest version [here](https://jenkins.craftmal.de/job/CloudTablist/lastSuccessfulBuild/artifact/target/CloudTablist.jar)
+ You can download the latest version [here](https://ci.craftgroup.de/job/CloudTablist/lastSuccessfulBuild/artifact/target/CloudTablist.jar)
 
  ## Wiki
  See the [Wiki](https://github.com/TimoCloud/CloudTablist/wiki/)
