@@ -3,7 +3,7 @@ package cloud.timo.cloudtablist.listeners;
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import cloud.timo.TimoCloud.api.events.EventHandler;
 import cloud.timo.TimoCloud.api.events.Listener;
-import cloud.timo.TimoCloud.api.events.PlayerDisconnectEvent;
+import cloud.timo.TimoCloud.api.events.player.PlayerDisconnectEvent;
 import cloud.timo.cloudtablist.CloudTablist;
 
 /**
@@ -13,8 +13,7 @@ import cloud.timo.cloudtablist.CloudTablist;
 public class PlayerDisconnectListener implements Listener {
 
     @EventHandler
-    public void onPlayerDisconnect(PlayerDisconnectEvent event){
-        CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
+    public void onPlayerDisconnect(PlayerDisconnectEvent event) {
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
             proxyObject.getOnlinePlayers().forEach(playerObject -> {
                 if (!playerObject.getUuid().equals(event.getPlayer().getUuid()))
@@ -22,4 +21,5 @@ public class PlayerDisconnectListener implements Listener {
             });
         }));
     }
+
 }

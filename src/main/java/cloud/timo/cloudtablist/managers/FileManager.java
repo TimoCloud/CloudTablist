@@ -57,7 +57,7 @@ public class FileManager {
         writer.close();
     }
 
-    public String getMessage(String path){
+    public String getMessage(String path) {
         return getConfig().get(path).toString();
     }
 
@@ -72,6 +72,7 @@ public class FileManager {
     public Map<String, Object> getConfig() {
         return config;
     }
+
 }
 
 

@@ -17,22 +17,25 @@ public class Helper {
 
     public void setTablist(PlayerObject playerObject) {
         TextComponent header = new TextComponent();
-        header.setText(this.replaceMessage(CloudTablist.getInstance().getFileManager().getMessage("header"), playerObject));
+        header.setText(this.prepareMessage(CloudTablist.getInstance().getFileManager().getMessage("header"), playerObject));
 
         TextComponent footer = new TextComponent();
-        footer.setText(this.replaceMessage(CloudTablist.getInstance().getFileManager().getMessage("footer"), playerObject));
+        footer.setText(this.prepareMessage(CloudTablist.getInstance().getFileManager().getMessage("footer"), playerObject));
 
         ProxyServer.getInstance().getPlayer(playerObject.getUuid()).setTabHeader(header, footer);
     }
 
 
-    private String replaceMessage(String message, PlayerObject playerObject) {
+    private String prepareMessage(String message, PlayerObject playerObject) {
         ServerObject serverObject = playerObject.getServer();
         ProxyObject proxyObject = playerObject.getProxy();
+
         int[] playerCountGlobal = {0};
         int[] maxPlayerCountGlobal = {0};
+
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> maxPlayerCountGlobal[0] += proxyGroupObject.getMaxPlayerCount());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> playerCountGlobal[0] += proxyGroupObject.getOnlinePlayerCount());
+
         return ChatColor.translateAlternateColorCodes('&', message
                 .replace("{onlinePlayersCountServer}", String.valueOf(serverObject.getOnlinePlayerCount()))
                 .replace("{onlinePlayersCountProxy}", String.valueOf(proxyObject.getOnlinePlayerCount()))
@@ -45,8 +48,8 @@ public class Helper {
                 .replace("{playerUUID}", playerObject.getUuid().toString())
                 .replace("{serverMOTD}", serverObject.getMotd())
                 .replace("{proxyMOTD]", proxyObject.getGroup().getMotd())
-                .replace("{proxyBASE}", proxyObject.getBase())
-                .replace("{serverBASE}", serverObject.getBase())
+                .replace("{proxyBASE}", proxyObject.getBase().getName())
+                .replace("{serverBASE}", serverObject.getBase().getName())
                 .replace("{serverState}", serverObject.getState())
                 .replace("{serverPort}", String.valueOf(serverObject.getPort()))
                 .replace("{proxyPort}", String.valueOf(proxyObject.getPort()))

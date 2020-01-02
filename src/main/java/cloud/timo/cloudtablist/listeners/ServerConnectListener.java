@@ -3,7 +3,7 @@ package cloud.timo.cloudtablist.listeners;
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import cloud.timo.TimoCloud.api.events.EventHandler;
 import cloud.timo.TimoCloud.api.events.Listener;
-import cloud.timo.TimoCloud.api.events.PlayerConnectEvent;
+import cloud.timo.TimoCloud.api.events.player.PlayerConnectEvent;
 import cloud.timo.cloudtablist.CloudTablist;
 
 /**

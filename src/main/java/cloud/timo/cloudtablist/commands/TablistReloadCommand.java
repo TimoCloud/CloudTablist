@@ -20,4 +20,5 @@ public class TablistReloadCommand extends Command {
         CloudTablist.getInstance().getFileManager().load();
         commandSender.sendMessage(new TextComponent("§aSuccessfully reloaded configuration from config.yml. (CloudTablist)"));
     }
+
 }

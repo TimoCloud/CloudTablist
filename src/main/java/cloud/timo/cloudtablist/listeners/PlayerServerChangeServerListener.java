@@ -3,7 +3,7 @@ package cloud.timo.cloudtablist.listeners;
 import cloud.timo.TimoCloud.api.TimoCloudAPI;
 import cloud.timo.TimoCloud.api.events.EventHandler;
 import cloud.timo.TimoCloud.api.events.Listener;
-import cloud.timo.TimoCloud.api.events.PlayerServerChangeEvent;
+import cloud.timo.TimoCloud.api.events.player.PlayerServerChangeEvent;
 import cloud.timo.cloudtablist.CloudTablist;
 
 /**
@@ -15,7 +15,7 @@ public class PlayerServerChangeServerListener implements Listener {
 
 
     @EventHandler
-    public void onPlayerServerChange(PlayerServerChangeEvent event){
+    public void onPlayerServerChange(PlayerServerChangeEvent event) {
         CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
             proxyObject.getOnlinePlayers().forEach(playerObject -> {
@@ -24,4 +24,5 @@ public class PlayerServerChangeServerListener implements Listener {
             });
         }));
     }
+
 }
