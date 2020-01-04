@@ -49,6 +49,7 @@ public class CloudTablist extends Plugin {
         this.getLogger().info("CloudTablist by " + getDescription().getAuthor() + " (Version: " + getDescription().getVersion() + ") has been disabled.");
     }
 
+    
     public static CloudTablist getInstance() {
         return instance;
     }
