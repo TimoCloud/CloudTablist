@@ -27,7 +27,6 @@ public class CloudTablist extends Plugin {
         this.getLogger().info("CloudTablist by " + getDescription().getAuthor() + " (Version: " + getDescription().getVersion() + ") has been enabled.");
     }
 
-
     private void registerCommands() {
         ProxyServer.getInstance().getPluginManager().registerCommand(this, new TablistReloadCommand());
     }

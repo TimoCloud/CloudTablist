@@ -14,12 +14,8 @@ public class ServerConnectListener implements Listener {
 
     @EventHandler
     public void onPlayerDisconnect(PlayerConnectEvent event) {
-        CloudTablist.getInstance().getHelper().setTablist(event.getPlayer());
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
-            proxyObject.getOnlinePlayers().forEach(playerObject -> {
-                if (!playerObject.getUuid().equals(event.getPlayer().getUuid()))
-                    CloudTablist.getInstance().getHelper().setTablist(playerObject);
-            });
+            proxyObject.getOnlinePlayers().forEach(playerObject -> CloudTablist.getInstance().getHelper().setTablist(playerObject, event));
         }));
     }
 
