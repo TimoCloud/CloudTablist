@@ -12,7 +12,7 @@ In addition, we have a large number of placeholders that can be used in the head
  ## Building from source
  ```
  git clone https://github.com/TimoCloud/CloudTablist.git
- cd CloudNotify
+ cd CloudTablist
  mvn clean package
  ```
 
