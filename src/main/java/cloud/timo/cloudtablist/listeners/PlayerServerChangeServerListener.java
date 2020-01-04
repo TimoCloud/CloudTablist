@@ -11,8 +11,7 @@ import cloud.timo.cloudtablist.CloudTablist;
  * Created in 23.08.2018
  */
 public class PlayerServerChangeServerListener implements Listener {
-
-
+    
     @EventHandler
     public void onPlayerServerChange(PlayerServerChangeEvent event) {
         TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
