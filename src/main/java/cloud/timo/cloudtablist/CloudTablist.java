@@ -10,9 +10,13 @@ import cloud.timo.cloudtablist.utils.Helper;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.plugin.Plugin;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * @author Sebastian
  * Created in 20.08.2018
+ * @author Maxthier
+ * Updated in 21.09.2021
  */
 public class CloudTablist extends Plugin {
     private static CloudTablist instance;
@@ -25,6 +29,14 @@ public class CloudTablist extends Plugin {
         this.registerListeners();
         this.registerCommands();
         this.getLogger().info("CloudTablist by " + getDescription().getAuthor() + " (Version: " + getDescription().getVersion() + ") has been enabled.");
+        getProxy().getScheduler().schedule(this, new Runnable() {
+            @Override
+            public void run() {
+                TimoCloudAPI.getUniversalAPI().getProxyGroups().forEach(proxyGroupObject -> proxyGroupObject.getProxies().forEach(proxyObject -> {
+                    proxyObject.getOnlinePlayers().forEach(playerObject -> CloudTablist.getInstance().getHelper().update(playerObject));
+                }));
+            }
+        }, 20, 2, TimeUnit.SECONDS);
     }
 
     private void registerCommands() {
